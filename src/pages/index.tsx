@@ -143,7 +143,7 @@ const Home: NextPage = () => {
               onClick={handleBake}
               isLoading={isLoading}
             >
-              ♨️ Bake!
+              ♨️ Bake ♨️
             </Button>
           </Stack>
           <Spacer />
