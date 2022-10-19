@@ -131,7 +131,7 @@ const Home: NextPage = () => {
               max={1000000}
               step={1}
               // value={digits}
-              onChange={(v) => setDigits(Number(v))}
+              onChange={(v: string) => setDigits(Number(v))}
             >
               <NumberInputField placeholder="Enter digits..." />
               <NumberInputStepper>
