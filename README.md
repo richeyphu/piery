@@ -1,5 +1,5 @@
 # πery
-**πery** (Piery: /paɪəɹi/) - Fresh baked PI from your browser!
+🥧 **πery** 🥧 (Piery: /paɪəɹi/) - Fresh baked PI from your browser!
 
 ---
 
