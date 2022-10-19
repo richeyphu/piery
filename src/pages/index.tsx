@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -8,6 +8,9 @@ import {
   Flex,
   Stack,
   Spacer,
+  Text,
+  Heading,
+  Center,
   Input,
   NumberInput,
   NumberInputField,
@@ -15,9 +18,7 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
   Button,
-  Text,
-  Heading,
-  Center,
+  Progress,
 } from "@chakra-ui/react";
 import { ColorToggle } from "@components";
 
@@ -25,13 +26,16 @@ const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
   const [result, setResult] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [progress, setProgress] = useState<number>(0);
 
   const handleBake = () => {
     setIsLoading(true);
+    setProgress(0);
     setTimeout(() => {
       heatOven(digits).then((res) => {
         setResult(res + "");
         setIsLoading(false);
+        setProgress(100);
       });
     }, 10);
     // alert(result);
@@ -61,8 +65,20 @@ const Home: NextPage = () => {
         pi += x / (i + 2n);
         i += 2n;
       }
+
       const pistr16 = pi.toString(16);
-      setResult(pistr16);
+      // setResult(x.toString());
+
+      const currentTerms = ((i - 1n) / 2n).toString();
+
+      const currentDigit = (
+        (pistr16.length - x.toString(16).length) * 1.20412 -
+        20
+      ).toFixed();
+      const currentProgress = (parseInt(currentDigit) / digits) * 100;
+      setProgress(currentProgress);
+      console.log(currentProgress);
+
       // document.getElementById("terms").innerHTML = ((i - 1n) / 2n).toString();
       // document.getElementById("dcount").innerHTML = (
       //   (pistr16.length - x.toString(16).length) * 1.20412 -
@@ -76,10 +92,6 @@ const Home: NextPage = () => {
       // document.getElementById("elapsed").innerHTML =
       //   ((new Date() - startTime) / 1000).toFixed(3) + " s";
 
-      // setTimeout(doSomeCalcs, 0);
-      // setTimeout(() => {
-      //   return bakePi(i, x, pi);
-      // }, 0);
       return bakePi(i, x, pi);
     } else {
       // After the last calculation, show in decimal
@@ -99,6 +111,10 @@ const Home: NextPage = () => {
   };
 
   const garnishPi = (res: string) => `3.${res.slice(1)}`;
+
+  useEffect(() => {
+    console.log(result);
+  }, [result]);
 
   return (
     <>
@@ -147,6 +163,7 @@ const Home: NextPage = () => {
             >
               ♨️ Bake ♨️
             </Button>
+            <Progress value={progress} size="xs" colorScheme="yellow" />
           </Stack>
           <Spacer />
           <Text mt={10} fontFamily="mono">
