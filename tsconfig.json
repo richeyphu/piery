@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2020",
+    "lib": ["dom", "dom.iterable", "esnext", "es2020"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,7 +13,28 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./",
+    // custom paths
+    "paths": {
+      // pages
+      "@pages"        : ["src/pages/index.tsx"],
+      "@pages/*"      : ["src/pages/*"],
+      // style
+      "@styles"       : ["src/styles/index.ts"],
+      "@styles/*"     : ["src/styles/*"],
+      // common
+      "@components"   : ["src/components/index.ts"],
+      "@components/*" : ["src/components/*"],
+      // theme
+      "@theme"        : ["src/theme/index.ts"],
+      "@theme/*"      : ["src/theme/*"],
+      // utils
+      "@utils"        : ["src/utils/index.ts"],
+      "@utils/*"      : ["src/utils/*"],
+      // public
+      "@public/*"     : ["public/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
