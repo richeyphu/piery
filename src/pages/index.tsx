@@ -78,7 +78,7 @@ const Home: NextPage = () => {
       const pistr16 = pi.toString(16);
       // setResult(x.toString());
 
-      const currentTerms = ((i - 1n) / 2n).toString();
+      const currentTerms = ((i - 1n) / 2n).toString(10);
 
       const currentDigit = (
         (pistr16.length - x.toString(16).length) * 1.20412 -
@@ -89,34 +89,11 @@ const Home: NextPage = () => {
 
       console.log(currentProgress);
 
-      // document.getElementById("terms").innerHTML = ((i - 1n) / 2n).toString();
-      // document.getElementById("dcount").innerHTML = (
-      //   (pistr16.length - x.toString(16).length) * 1.20412 -
-      //   20
-      // ).toFixed(0);
-
-      // document.getElementById("digits").innerHTML = pistr16.replace(
-      //   /.{10}/g,
-      //   "$& "
-      // );
-      // document.getElementById("elapsed").innerHTML =
-      //   ((new Date() - startTime) / 1000).toFixed(3) + " s";
-
       return bakePi(i, x, pi);
     } else {
       // After the last calculation, show in decimal
-      // const base10start = new Date();
       const pistr10 = (pi / powBigInt(10n, 20n)).toString(10);
       return pistr10;
-      // document.getElementById("dcount").innerHTML = (
-      //   pistr10.length - 1
-      // ).toFixed(0);
-      // document.getElementById("digits").innerHTML = pistr10.replace(
-      //   /.{10}/g,
-      //   "$& "
-      // );
-      // document.getElementById("base10").innerHTML =
-      //   ((new Date() - base10start) / 1000).toFixed(3) + " s";
     }
   };
 
