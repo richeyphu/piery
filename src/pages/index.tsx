@@ -27,13 +27,17 @@ const Home: NextPage = () => {
   const [result, setResult] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
+  const [timeStart, setTimeStart] = useState<number>(0);
+  const [timeEnd, setTimeEnd] = useState<number>(0);
 
   const handleBake = () => {
     setIsLoading(true);
     setProgress(0);
     setTimeout(() => {
+      setTimeStart(Date.now());
       heatOven(digits).then((res) => {
         setResult(res + "");
+        setTimeEnd(Date.now());
         setIsLoading(false);
         setProgress(100);
       });
@@ -112,9 +116,10 @@ const Home: NextPage = () => {
 
   const garnishPi = (res: string) => `3.${res.slice(1)}`;
 
-  useEffect(() => {
-    console.log(result);
-  }, [result]);
+  const calElapsed = () => {
+    const elapsed = (timeEnd - timeStart) / 1000;
+    return elapsed.toFixed(3);
+  };
 
   return (
     <>
@@ -164,11 +169,20 @@ const Home: NextPage = () => {
               ♨️ Bake ♨️
             </Button>
             <Progress value={progress} size="xs" colorScheme="yellow" />
+            {result && (
+              <Center>
+                <Text mt={1}>
+                  ⏱ Done in {calElapsed()} s
+                </Text>
+              </Center>
+            )}
           </Stack>
           <Spacer />
-          <Text mt={10} fontFamily="mono">
-            {garnishPi(result)}
-          </Text>
+          {result && (
+            <Text mt={8} fontFamily="mono">
+              {garnishPi(result)}
+            </Text>
+          )}
         </Flex>
       </Container>
     </>
