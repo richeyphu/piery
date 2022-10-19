@@ -49,8 +49,6 @@ const Home: NextPage = () => {
     const i = 1n;
     const x = 3n * powBigInt(10n, BigInt(d) + 20n);
     const pi = x;
-    // startTime = new Date();
-    // setTimeout(doSomeCalcs, 0);
     return bakePi(i, x, pi);
   };
 
@@ -80,7 +78,8 @@ const Home: NextPage = () => {
         20
       ).toFixed();
       const currentProgress = (parseInt(currentDigit) / digits) * 100;
-      setProgress(currentProgress);
+      setTimeout(() => setProgress(currentProgress), 10);
+
       console.log(currentProgress);
 
       // document.getElementById("terms").innerHTML = ((i - 1n) / 2n).toString();
@@ -131,7 +130,7 @@ const Home: NextPage = () => {
       {/* 
       <main className={styles.main}></main> 
       */}
-      
+
       <Container maxW="3xl">
         <Flex flexDir="column" mt={10} mb={10}>
           <Flex flexDir="column" textAlign="center">
