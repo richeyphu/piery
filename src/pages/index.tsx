@@ -98,7 +98,7 @@ const Home: NextPage = () => {
       return bakePi(i, x, pi);
     } else {
       // After the last calculation, show in decimal
-      const base10start = new Date();
+      // const base10start = new Date();
       const pistr10 = (pi / powBigInt(10n, 20n)).toString(10);
       return pistr10;
       // document.getElementById("dcount").innerHTML = (
@@ -152,6 +152,11 @@ const Home: NextPage = () => {
               step={1}
               // value={digits}
               onChange={(v: string) => setDigits(Number(v))}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  handleBake();
+                }
+              }}
             >
               <NumberInputField placeholder="Enter digits..." />
               <NumberInputStepper>
