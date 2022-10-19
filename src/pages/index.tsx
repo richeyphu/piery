@@ -98,7 +98,7 @@ const Home: NextPage = () => {
     }
   };
 
-  const garnishPi = () => `3.${result.slice(1)}`;
+  const garnishPi = (res: string) => `3.${res.slice(1)}`;
 
   return (
     <>
