@@ -132,7 +132,7 @@ const Home: NextPage = () => {
       */}
 
       <Container maxW="3xl">
-        <Flex flexDir="column" mt={10} mb={10}>
+        <Flex flexDir="column" mt={20} mb={12}>
           <Flex flexDir="column" textAlign="center">
             <Heading mb={3} size="2xl" letterSpacing={2}>
               🥧 πery 🥧
