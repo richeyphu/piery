@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         setIsLoading(false);
         setProgress(100);
       });
-    }, 10);
+    }, 50);
     // alert(result);
   };
 
