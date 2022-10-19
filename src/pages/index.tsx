@@ -35,12 +35,18 @@ const Home: NextPage = () => {
     setProgress(0);
     setTimeout(() => {
       setTimeStart(Date.now());
-      heatOven(digits).then((res) => {
-        setResult(res + "");
-        setTimeEnd(Date.now());
-        setIsLoading(false);
-        setProgress(100);
-      });
+      heatOven(digits)
+        .then((res) => {
+          setResult(res + "");
+        })
+        .catch((err) => {
+          console.error(err);
+        })
+        .finally(() => {
+          setTimeEnd(Date.now());
+          setIsLoading(false);
+          setProgress(100);
+        });
     }, 50);
     // alert(result);
   };
