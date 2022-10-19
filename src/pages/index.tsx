@@ -19,6 +19,7 @@ import {
   NumberDecrementStepper,
   Button,
   Progress,
+  useColorMode,
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner } from "@components";
 
@@ -109,6 +110,10 @@ const Home: NextPage = () => {
       <Head>
         <title>🥧 πery | Piery 🥧</title>
         <meta name="description" content="Fresh baked PI from your browser!" />
+        <meta
+          name="theme-color"
+          content={useColorMode().colorMode === "dark" ? "#1a202c" : "#fff"}
+        />
       </Head>
 
       {/* 
