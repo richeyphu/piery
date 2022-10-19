@@ -98,6 +98,8 @@ const Home: NextPage = () => {
     }
   };
 
+  const garnishPi = () => `3.${result.slice(1)}`;
+
   return (
     <>
       <Head>
@@ -147,7 +149,9 @@ const Home: NextPage = () => {
             </Button>
           </Stack>
           <Spacer />
-          <Text mt={10}>{result}</Text>
+          <Text mt={10} fontFamily="mono">
+            {garnishPi(result)}
+          </Text>
         </Flex>
       </Container>
     </>
