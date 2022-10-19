@@ -20,7 +20,7 @@ import {
   Button,
   Progress,
 } from "@chakra-ui/react";
-import { ColorToggle } from "@components";
+import { ColorToggle, GithubCorner } from "@components";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -131,7 +131,7 @@ const Home: NextPage = () => {
       {/* 
       <main className={styles.main}></main> 
       */}
-
+      
       <Container maxW="3xl">
         <Flex flexDir="column" mt={10} mb={10}>
           <Flex flexDir="column" textAlign="center">
@@ -171,9 +171,7 @@ const Home: NextPage = () => {
             <Progress value={progress} size="xs" colorScheme="yellow" />
             {result && (
               <Center>
-                <Text mt={1}>
-                  ⏱ Done in {calElapsed()} s
-                </Text>
+                <Text mt={1}>⏱ Done in {calElapsed()} s</Text>
               </Center>
             )}
           </Stack>
@@ -185,6 +183,7 @@ const Home: NextPage = () => {
           )}
         </Flex>
       </Container>
+      <GithubCorner />
     </>
   );
 };
