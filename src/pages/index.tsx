@@ -41,6 +41,7 @@ const Home: NextPage = () => {
         })
         .catch((err) => {
           console.error(err);
+          setResult("");
         })
         .finally(() => {
           setTimeEnd(Date.now());
