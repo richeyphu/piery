@@ -197,39 +197,27 @@ const Home: NextPage = () => {
               ♨️ Bake ♨️
             </Button>
             <Progress value={progress} size="xs" colorScheme="yellow" />
-            {
-              /*isLoading ? (
-              <Center mt={10}>
-                <span className={styles["spin-me"]}>⏳</span>
+            {result && (
+              <Center>
+                <Text mt={1}>
+                  {isLoading
+                    ? `⏳ Baking: ${calElapsed()} s ⏳`
+                    : `✨ Done in ${calElapsed()} s ✨`}
+                </Text>
               </Center>
-            ) : */ result && (
-                <Center>
-                  <Text mt={1}>
-                    {isLoading
-                      ? `⏳ Baking: ${calElapsed()} s ⏳`
-                      : `✨ Done in ${calElapsed()} s ✨`}
-                  </Text>
-                </Center>
-              )
-            }
+            )}
           </Stack>
           <Spacer />
-          {
-            /*isLoading ? (
-            <Center fontSize="9xl" mt={10}>
-              <span className={styles["spin-me"]}>🥧</span>
-            </Center>
-          ) :*/ result && (
-              <>
-                <Text mt={8} fontFamily="mono">
-                  {garnishPi(result)}
-                </Text>
-                <Center mt={6}>
-                  <ScrollToTop />
-                </Center>
-              </>
-            )
-          }
+          {result && (
+            <>
+              <Text mt={8} fontFamily="mono">
+                {garnishPi(result)}
+              </Text>
+              <Center mt={6}>
+                <ScrollToTop />
+              </Center>
+            </>
+          )}
         </Flex>
       </Container>
       <GithubCorner />
