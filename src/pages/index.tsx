@@ -18,6 +18,7 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
   Button,
+  Badge,
   Progress,
   useColorMode,
 } from "@chakra-ui/react";
@@ -30,27 +31,34 @@ const Home: NextPage = () => {
   const [progress, setProgress] = useState<number>(0);
   const [timeStart, setTimeStart] = useState<number>(0);
   const [timeEnd, setTimeEnd] = useState<number>(0);
+  const [currentI, setCurrentI] = useState<bigint>(1n);
+  const [currentX, setCurrentX] = useState<bigint>(0n);
+  const [currentPi, setCurrentPi] = useState<bigint>(currentX);
+  const [currentDigit, setCurrentDigit] = useState<number>(0);
 
   const handleBake = () => {
-    setIsLoading(true);
-    setProgress(0);
-    setTimeout(() => {
-      setTimeStart(Date.now());
-      heatOven(digits)
-        .then((res) => {
-          setResult(res + "");
-        })
-        .catch((err) => {
-          console.error(err);
-          setResult("");
-        })
-        .finally(() => {
-          setTimeEnd(Date.now());
-          setIsLoading(false);
-          setProgress(100);
-        });
-    }, 50);
-    // alert(result);
+    if (digits > 0) {
+      setIsLoading(true);
+      setProgress(0);
+      setTimeout(() => {
+        setTimeStart(Date.now());
+        heatOven(digits)
+          .then((res) => {
+            // setResult(res + "");
+          })
+          .catch((err) => {
+            console.error(err);
+            // setResult("");
+          })
+          .finally(() => {
+            if (currentDigit === digits || digits === 1) {
+              setTimeEnd(Date.now());
+              setIsLoading(false);
+              setProgress(100);
+            }
+          });
+      }, 100);
+    }
   };
 
   const heatOven = async (d: number) => {
@@ -60,6 +68,23 @@ const Home: NextPage = () => {
     return bakePi(i, x, pi);
   };
 
+  useEffect(() => {
+    if (currentX > 0 && digits > 0) {
+      const i = currentI;
+      const x = currentX;
+      const pi = currentPi;
+      bakePi(i, x, pi);
+      setTimeEnd(Date.now());
+    } else {
+      setTimeEnd(Date.now());
+      setIsLoading(false);
+      setProgress(result ? 100 : 0);
+    }
+
+    return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentDigit, currentX]);
+
   const powBigInt = (x: bigint, y: bigint) => {
     let z = 1n;
     for (let i = 0n; i < y; i++) {
@@ -68,16 +93,21 @@ const Home: NextPage = () => {
     return z;
   };
 
-  const bakePi = (i: bigint, x: bigint, pi: bigint): string => {
-    if (x > 0) {
+  const bakePi = (i: bigint, x: bigint, pi: bigint) => {
+    if (x > 0n) {
       for (let j = 0; j < 100; ++j) {
         x = (x * i) / ((i + 1n) * 4n);
         pi += x / (i + 2n);
         i += 2n;
       }
 
+      setCurrentI(i);
+      setCurrentX(x);
+      setCurrentPi(pi);
+
       const pistr16 = pi.toString(16);
-      // setResult(x.toString());
+      const pistr10 = pi.toString(10);
+      setResult(pistr10.slice(0, pistr10.length - 20));
 
       const currentTerms = ((i - 1n) / 2n).toString(10);
 
@@ -85,16 +115,21 @@ const Home: NextPage = () => {
         (pistr16.length - x.toString(16).length) * 1.20412 -
         20
       ).toFixed();
+      setCurrentDigit(parseInt(currentDigit));
+
       const currentProgress = (parseInt(currentDigit) / digits) * 100;
-      setTimeout(() => setProgress(currentProgress), 10);
+      // setTimeout(() => setProgress(currentProgress), 10);
+      setProgress(currentProgress);
 
       console.log(currentProgress);
 
-      return bakePi(i, x, pi);
+      // return bakePi(i, x, pi);
     } else {
       // After the last calculation, show in decimal
       const pistr10 = (pi / powBigInt(10n, 20n)).toString(10);
-      return pistr10;
+      setResult(pistr10);
+      setProgress(100);
+      // return pistr10;
     }
   };
 
@@ -108,7 +143,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🥧 πery | Piery 🥧</title>
+        <title>🥧 πery | Beta 🥧</title>
         <meta name="description" content="Fresh baked PI from your browser!" />
         <meta
           name="theme-color"
@@ -127,7 +162,10 @@ const Home: NextPage = () => {
               🥧 πery 🥧
             </Heading>
             <Text mt={2} letterSpacing={1.5} fontWeight="light">
-              Fresh baked PI from your browser!
+              Fresh baked PI from your browser!{" "}
+              <Badge colorScheme="orange" letterSpacing={1}>
+                Beta
+              </Badge>
             </Text>
             <Center mt={3}>
               <ColorToggle />
@@ -142,12 +180,7 @@ const Home: NextPage = () => {
               // value={digits}
               onChange={(v: string) => setDigits(Number(v))}
               onKeyPress={(e) => {
-                if (
-                  e.key === "Enter" &&
-                  digits > 0 &&
-                  digits <= 1000000 &&
-                  !isLoading
-                ) {
+                if (e.key === "Enter" && digits > 0 && digits <= 1000000) {
                   handleBake();
                 }
               }}
@@ -167,29 +200,29 @@ const Home: NextPage = () => {
               ♨️ Bake ♨️
             </Button>
             <Progress value={progress} size="xs" colorScheme="yellow" />
-            {isLoading ? (
+            {
+              /*isLoading ? (
               <Center mt={10}>
                 <span className={styles["spin-me"]}>⏳</span>
-                <Text ml={2} mr={2}>
-                  Baking
-                </Text>
-                <span className={styles["spin-me"]}>⏳</span>
               </Center>
-            ) : (
-              result && (
+            ) : */ result && (
                 <Center>
-                  <Text mt={1}>⏱ Done in {calElapsed()} s ⏱</Text>
+                  <Text mt={1}>
+                    {isLoading
+                      ? `⏳ Baking: ${calElapsed()} s ⏳`
+                      : `✨ Done in ${calElapsed()} s ✨`}
+                  </Text>
                 </Center>
               )
-            )}
+            }
           </Stack>
           <Spacer />
-          {isLoading ? (
+          {
+            /*isLoading ? (
             <Center fontSize="9xl" mt={10}>
               <span className={styles["spin-me"]}>🥧</span>
             </Center>
-          ) : (
-            result && (
+          ) :*/ result && (
               <>
                 <Text mt={8} fontFamily="mono">
                   {garnishPi(result)}
@@ -199,7 +232,7 @@ const Home: NextPage = () => {
                 </Center>
               </>
             )
-          )}
+          }
         </Flex>
       </Container>
       <GithubCorner />
