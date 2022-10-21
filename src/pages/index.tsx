@@ -60,6 +60,7 @@ const Home: NextPage = () => {
               setTimeEnd(Date.now());
               setIsLoading(false);
               setProgress(100);
+              setCurrentDigit(0);
             }
           });
       }, 100);
@@ -84,6 +85,7 @@ const Home: NextPage = () => {
       setTimeEnd(Date.now());
       setIsLoading(false);
       setProgress(result ? 100 : 0);
+      setCurrentDigit(0);
     }
 
     return () => {};
