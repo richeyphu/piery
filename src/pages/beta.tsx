@@ -200,7 +200,7 @@ const Home: NextPage = () => {
               </Center>
             ) : */ result && (
                 <Center>
-                  <Text mt={1}>⏱ Done in {calElapsed()} s ⏱</Text>
+                  <Text mt={1}>⏱ Elapsed: {calElapsed()} s ⏱</Text>
                 </Center>
               )
             }
