@@ -80,6 +80,7 @@ const Home: NextPage = () => {
     }
 
     return () => {};
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentDigit, currentX]);
 
   const powBigInt = (x: bigint, y: bigint) => {
