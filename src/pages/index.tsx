@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import NextLink from "next/link";
 import styles from "../styles/Home.module.css";
 import {
   Container,
@@ -19,7 +20,9 @@ import {
   NumberDecrementStepper,
   Button,
   Badge,
+  Box,
   Progress,
+  Link,
   useColorMode,
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
@@ -219,6 +222,15 @@ const Home: NextPage = () => {
               </Center>
             </>
           )}
+          <Center mt={10}>
+            <Text fontSize="sm" color="gray.500">
+              Try{" "}
+              <NextLink href="/lite" passHref>
+                <Link color="yellow.500">πery Lite</Link>
+              </NextLink>
+              !
+            </Text>
+          </Center>
         </Flex>
       </Container>
       <GithubCorner />
