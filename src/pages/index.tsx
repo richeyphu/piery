@@ -143,7 +143,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🥧 πery | Beta 🥧</title>
+        <title>🥧 πery | Piery 🥧</title>
         <meta name="description" content="Fresh baked PI from your browser!" />
         <meta
           name="theme-color"
@@ -162,10 +162,7 @@ const Home: NextPage = () => {
               🥧 πery 🥧
             </Heading>
             <Text mt={2} letterSpacing={1.5} fontWeight="light">
-              Fresh baked PI from your browser!{" "}
-              <Badge colorScheme="orange" letterSpacing={1}>
-                Beta
-              </Badge>
+              Fresh baked PI from your browser!
             </Text>
             <Center mt={3}>
               <ColorToggle />
