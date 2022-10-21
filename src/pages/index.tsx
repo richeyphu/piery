@@ -26,6 +26,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
+import { countBake } from "@utils";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
     if (digits > 0) {
       setIsLoading(true);
       setProgress(0);
+      countBake();
       setTimeout(() => {
         setTimeStart(Date.now());
         heatOven(digits)
@@ -152,10 +154,7 @@ const Home: NextPage = () => {
           name="theme-color"
           content={useColorMode().colorMode === "dark" ? "#1a202c" : "#fff"}
         />
-        <script
-          async
-          src="https://api.countapi.xyz/hit/piery-web/visits"
-        />
+        <script async src="https://api.countapi.xyz/hit/piery-web/visits" />
       </Head>
 
       {/* 
