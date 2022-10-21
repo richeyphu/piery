@@ -170,6 +170,10 @@ const Home: NextPage = () => {
             {isLoading ? (
               <Center mt={10}>
                 <span className={styles["spin-me"]}>⏳</span>
+                <Text ml={2} mr={2}>
+                  Baking
+                </Text>
+                <span className={styles["spin-me"]}>⏳</span>
               </Center>
             ) : (
               result && (
