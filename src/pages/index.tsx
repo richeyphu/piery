@@ -142,7 +142,12 @@ const Home: NextPage = () => {
               // value={digits}
               onChange={(v: string) => setDigits(Number(v))}
               onKeyPress={(e) => {
-                if (e.key === "Enter") {
+                if (
+                  e.key === "Enter" &&
+                  digits > 0 &&
+                  digits <= 1000000 &&
+                  !isLoading
+                ) {
                   handleBake();
                 }
               }}
