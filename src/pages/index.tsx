@@ -21,7 +21,7 @@ import {
   Progress,
   useColorMode,
 } from "@chakra-ui/react";
-import { ColorToggle, GithubCorner } from "@components";
+import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -186,9 +186,14 @@ const Home: NextPage = () => {
             </Center>
           ) : (
             result && (
-              <Text mt={8} fontFamily="mono">
-                {garnishPi(result)}
-              </Text>
+              <>
+                <Text mt={8} fontFamily="mono">
+                  {garnishPi(result)}
+                </Text>
+                <Center mt={6}>
+                  <ScrollToTop />
+                </Center>
+              </>
             )
           )}
         </Flex>

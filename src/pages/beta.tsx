@@ -22,7 +22,7 @@ import {
   Progress,
   useColorMode,
 } from "@chakra-ui/react";
-import { ColorToggle, GithubCorner } from "@components";
+import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
     }
 
     return () => {};
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentDigit, currentX]);
 
   const powBigInt = (x: bigint, y: bigint) => {
@@ -217,9 +217,14 @@ const Home: NextPage = () => {
               <span className={styles["spin-me"]}>🥧</span>
             </Center>
           ) :*/ result && (
-              <Text mt={8} fontFamily="mono">
-                {garnishPi(result)}
-              </Text>
+              <>
+                <Text mt={8} fontFamily="mono">
+                  {garnishPi(result)}
+                </Text>
+                <Center mt={6}>
+                  <ScrollToTop />
+                </Center>
+              </>
             )
           }
         </Flex>
