@@ -78,7 +78,7 @@ const Home: NextPage = () => {
     } else {
       setTimeEnd(Date.now());
       setIsLoading(false);
-      setProgress(100);
+      setProgress(result ? 100 : 0);
     }
 
     return () => {};
