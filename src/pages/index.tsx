@@ -181,6 +181,7 @@ const Home: NextPage = () => {
                   handleBake();
                 }
               }}
+              isDisabled={isLoading}
             >
               <NumberInputField placeholder="Enter digits..." />
               <NumberInputStepper>
