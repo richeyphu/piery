@@ -16,6 +16,7 @@ specifiers:
   preact: ^10.11.2
   preact-render-to-string: ^5.2.5
   react: npm:@preact/compat@17.1.2
+  react-countup: ^6.3.2
   react-dom: npm:@preact/compat@17.1.2
   react-github-corner: ^2.5.0
   react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
@@ -32,6 +33,7 @@ dependencies:
   preact: 10.11.2
   preact-render-to-string: 5.2.5_preact@10.11.2
   react: /@preact/compat/17.1.2_preact@10.11.2
+  react-countup: 6.3.2_@preact+compat@17.1.2
   react-dom: /@preact/compat/17.1.2_preact@10.11.2
   react-github-corner: 2.5.0_@preact+compat@17.1.2
   react-ssr-prepass: /preact-ssr-prepass/1.2.0_preact@10.11.2
@@ -1944,6 +1946,10 @@ packages:
       yaml: 1.10.2
     dev: false
 
+  /countup.js/2.3.2:
+    resolution: {integrity: sha512-dQ7F/CmKGjaO6cDfhtEXwsKVlXIpJ89dFs8PvkaZH9jBVJ2Z8GU4iwG/qP7MgY8qwr+1skbwR6qecWWQLUzB8Q==}
+    dev: false
+
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -3184,6 +3190,15 @@ packages:
       react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.19.4
+      react: /@preact/compat/17.1.2_preact@10.11.2
+    dev: false
+
+  /react-countup/6.3.2_@preact+compat@17.1.2:
+    resolution: {integrity: sha512-ID3344D1Yo0X5CWQiJYXBpiPCYLwMOw1VvNP9geJE+PqpdDmx6iuoMhxXAqjpdaRWiD6zUnLRK6rrnGgDg09pg==}
+    peerDependencies:
+      react: '>= 16.3.0'
+    dependencies:
+      countup.js: 2.3.2
       react: /@preact/compat/17.1.2_preact@10.11.2
     dev: false
 

@@ -19,6 +19,7 @@
     "preact": "^10.11.2",
     "preact-render-to-string": "^5.2.5",
     "react": "npm:@preact/compat@17.1.2",
+    "react-countup": "^6.3.2",
     "react-dom": "npm:@preact/compat@17.1.2",
     "react-github-corner": "^2.5.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.2.0"
