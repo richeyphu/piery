@@ -9,14 +9,14 @@ const imageUrl: string =
 const MetaTags = () => {
   return (
     <>
-      {/* <!-- Facebook Meta Tags --> */}
+      {/* Facebook Meta Tags */}
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content="{description}" />
       <meta property="og:image" content={imageUrl} />
 
-      {/* <!-- Twitter Meta Tags --> */}
+      {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="piery.vercel.app" />
       <meta property="twitter:url" content={url} />
