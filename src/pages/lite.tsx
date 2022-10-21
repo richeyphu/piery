@@ -18,6 +18,7 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
   Button,
+  Badge,
   Progress,
   useColorMode,
 } from "@chakra-ui/react";
@@ -108,7 +109,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🥧 πery | Piery 🥧</title>
+        <title>🥧 πery | Lite 🥧</title>
         <meta name="description" content="Fresh baked PI from your browser!" />
         <meta
           name="theme-color"
@@ -127,7 +128,10 @@ const Home: NextPage = () => {
               🥧 πery 🥧
             </Heading>
             <Text mt={2} letterSpacing={1.5} fontWeight="light">
-              Fresh baked PI from your browser!
+              Fresh baked PI from your browser!{" "}
+              <Badge colorScheme="orange" letterSpacing={1}>
+                Lite
+              </Badge>
             </Text>
             <Center mt={3}>
               <ColorToggle />
