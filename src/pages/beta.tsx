@@ -51,11 +51,13 @@ const Home: NextPage = () => {
             // setResult("");
           })
           .finally(() => {
-            // setTimeEnd(Date.now());
-            // setIsLoading(false);
-            // setProgress(100);
+            if (currentDigit === digits || digits === 1) {
+              setTimeEnd(Date.now());
+              setIsLoading(false);
+              setProgress(100);
+            }
           });
-      }, 50);
+      }, 100);
     }
   };
 
@@ -205,7 +207,9 @@ const Home: NextPage = () => {
               </Center>
             ) : */ result && (
                 <Center>
-                  <Text mt={1}>⏱ Elapsed: {calElapsed()} s ⏱</Text>
+                  <Text mt={1}>
+                    ⏱ Elapsed: {calElapsed()} s ⏱
+                  </Text>
                 </Center>
               )
             }
