@@ -37,7 +37,7 @@ const Home: NextPage = () => {
   const [currentDigit, setCurrentDigit] = useState<number>(0);
 
   const handleBake = () => {
-    if (digits > 0n) {
+    if (digits > 0) {
       setIsLoading(true);
       setProgress(0);
       setTimeout(() => {
@@ -208,7 +208,9 @@ const Home: NextPage = () => {
             ) : */ result && (
                 <Center>
                   <Text mt={1}>
-                    ⏱ Elapsed: {calElapsed()} s ⏱
+                    {isLoading
+                      ? `⏳ Baking: ${calElapsed()} s ⏳`
+                      : `✨ Done in ${calElapsed()} s ✨`}
                   </Text>
                 </Center>
               )
