@@ -7,7 +7,7 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/richeyphu/thai-regex-dict)](https://github.com/richeyphu/piery/pulls)
 
 <p align="center">
-  <img width="1030" alt="Screen Shot 2022-10-19 at 23 15 46" src="public/cover.png">
+  <img alt="cover" src="public/cover.png">
 </p>
 
 <p align="center">
