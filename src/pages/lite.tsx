@@ -91,7 +91,7 @@ const Home: NextPage = () => {
         20
       ).toFixed();
       const currentProgress = (parseInt(currentDigit) / digits) * 100;
-      setTimeout(() => setProgress(currentProgress), 10);
+      // setTimeout(() => setProgress(currentProgress), 10);
 
       console.log(currentProgress);
 
