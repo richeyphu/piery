@@ -13,10 +13,12 @@
 <p align="center">
   <b>🥧 πery 🥧</b>
   <br/>
-  (Piery: /paɪəɹi/)
-  <br/>
   <i>Fresh baked PI from your browser!</i>
 </p>
+
+## About
+
+**πery** (Piery: /paɪəɹi/) is a web app that freshly bakes π to any number of digits by using your browser as an oven. The π formula used in this project was inspired by [A. Jennings](http://ajennings.net/blog/a-million-digits-of-pi-in-9-lines-of-javascript.html).
 
 ## Setup
 
