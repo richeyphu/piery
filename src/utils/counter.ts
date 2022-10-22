@@ -1,8 +1,9 @@
-export function countBake() {
+const getCountApi = (key: string): string => {
+  return `https://api.countapi.xyz/hit/piery-web/${key}`;
+};
+
+export function countBake(): void {
   var xhr = new XMLHttpRequest();
-  xhr.open(
-    "GET",
-    "https://api.countapi.xyz/hit/piery-web/bakedpi",
-  );
+  xhr.open("GET", getCountApi("bakedpi"));
   xhr.send();
 }
