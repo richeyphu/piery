@@ -196,11 +196,17 @@ const Home: NextPage = () => {
               </>
             )
           )}
-          <Center mt={10}>
+          <Center mt={10} flexDir="column">
             <Text fontSize="sm" color="gray.500">
               Back to{" "}
               <NextLink href="/" passHref>
                 <Link color="yellow.500">Home</Link>
+              </NextLink>
+            </Text>
+            <Text fontSize="sm" color="gray.500" mt={2}>
+              View{" "}
+              <NextLink href="/stats" passHref>
+                <Link color="yellow.500">π-o-Meter</Link>
               </NextLink>
             </Text>
           </Center>
