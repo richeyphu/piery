@@ -13,21 +13,27 @@ import {
 } from "@chakra-ui/react";
 import CountUp from "react-countup";
 import { InfoIcon } from "@chakra-ui/icons";
+import { getCountApiUrl } from "@utils";
 
 const Stats: NextPage = () => {
   const [visits, setVisits] = useState<number>(0);
-  const [searches, setBakes] = useState<number>(0);
+  const [bakes, setBakes] = useState<number>(0);
+  const [totalDigits, setTotalDigits] = useState<number>(0);
 
   const router = useRouter();
 
   useEffect(() => {
-    fetch("https://api.countapi.xyz/get/piery-web/visits")
+    fetch(getCountApiUrl("get", "visits"))
       .then((res) => res.json())
       .then((data) => setVisits(data.value))
       .catch((err) => console.log(err));
-    fetch("https://api.countapi.xyz/get/piery-web/bakedpi")
+    fetch(getCountApiUrl("get", "bakedpi"))
       .then((res) => res.json())
       .then((data) => setBakes(data.value))
+      .catch((err) => console.log(err));
+    fetch(getCountApiUrl("get", "sumdigits"))
+      .then((res) => res.json())
+      .then((data) => setTotalDigits(data.value))
       .catch((err) => console.log(err));
   }, []);
 
@@ -65,7 +71,18 @@ const Stats: NextPage = () => {
           </Text>
           <Heading>
             <CountUp
-              end={searches}
+              end={bakes}
+              separator=","
+              duration={2}
+              enableScrollSpy={false}
+            />
+          </Heading>
+          <Text fontWeight="bold" fontSize="1.5rem">
+            Total Digits
+          </Text>
+          <Heading>
+            <CountUp
+              end={totalDigits}
               separator=","
               duration={2}
               enableScrollSpy={false}
