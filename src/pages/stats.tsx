@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import CountUp from "react-countup";
 import { CloseIcon } from "@chakra-ui/icons";
+import { GithubCorner } from "@components";
 import { getCountApiUrl } from "@utils";
 
 const Stats: NextPage = () => {
@@ -51,7 +52,12 @@ const Stats: NextPage = () => {
         />
       </Head>
 
-      <Flex height="100vh" alignItems="center" justifyContent="center">
+      <Flex
+        height="100vh"
+        alignItems="center"
+        justifyContent="center"
+        minH="500px"
+      >
         <VStack spacing={4}>
           <Heading>🥧 π-o-Meter 🥧</Heading>
           <Divider />
@@ -97,6 +103,7 @@ const Stats: NextPage = () => {
           />
         </VStack>
       </Flex>
+      <GithubCorner />
     </>
   );
 };
