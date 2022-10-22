@@ -12,7 +12,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import CountUp from "react-countup";
-import { InfoIcon } from "@chakra-ui/icons";
+import { CloseIcon } from "@chakra-ui/icons";
 import { getCountApiUrl } from "@utils";
 
 const Stats: NextPage = () => {
@@ -53,7 +53,7 @@ const Stats: NextPage = () => {
 
       <Flex height="100vh" alignItems="center" justifyContent="center">
         <VStack spacing={4}>
-          <Heading>🥧π-o-Meter🥧</Heading>
+          <Heading>🥧 π-o-Meter 🥧</Heading>
           <Divider />
           <Text fontWeight="bold" fontSize="1.5rem">
             Oven Hits
@@ -91,7 +91,7 @@ const Stats: NextPage = () => {
           <Divider />
           <IconButton
             aria-label="Home"
-            icon={<InfoIcon />}
+            icon={<CloseIcon />}
             onClick={() => router.push("/")}
             variant="ghost"
           />
