@@ -26,7 +26,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
-import { countBake } from "@utils";
+import { countBake, powBigInt, garnishPi, calElapsed } from "@utils";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -93,14 +93,6 @@ const Home: NextPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentDigit, currentX]);
 
-  const powBigInt = (x: bigint, y: bigint) => {
-    let z = 1n;
-    for (let i = 0n; i < y; i++) {
-      z *= x;
-    }
-    return z;
-  };
-
   const bakePi = (i: bigint, x: bigint, pi: bigint) => {
     if (x > 0n) {
       for (let j = 0; j < 100; ++j) {
@@ -139,13 +131,6 @@ const Home: NextPage = () => {
       setProgress(100);
       // return pistr10;
     }
-  };
-
-  const garnishPi = (res: string) => `3.${res.slice(1)}`;
-
-  const calElapsed = () => {
-    const elapsed = (timeEnd - timeStart) / 1000;
-    return elapsed.toFixed(3);
   };
 
   return (
@@ -211,8 +196,8 @@ const Home: NextPage = () => {
               <Center>
                 <Text mt={1}>
                   {isLoading
-                    ? `⏳ Baking: ${calElapsed()} s ⏳`
-                    : `✨ Done in ${calElapsed()} s ✨`}
+                    ? `⏳ Baking: ${calElapsed(timeStart, timeEnd)} s ⏳`
+                    : `✨ Done in ${calElapsed(timeStart, timeEnd)} s ✨`}
                 </Text>
               </Center>
             )}

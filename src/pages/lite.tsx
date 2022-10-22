@@ -25,7 +25,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
-import { countBake } from "@utils";
+import { countBake, powBigInt, garnishPi, calElapsed } from "@utils";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -65,14 +65,6 @@ const Home: NextPage = () => {
     return bakePi(i, x, pi);
   };
 
-  const powBigInt = (x: bigint, y: bigint) => {
-    let z = 1n;
-    for (let i = 0n; i < y; i++) {
-      z *= x;
-    }
-    return z;
-  };
-
   const bakePi = (i: bigint, x: bigint, pi: bigint): string => {
     if (x > 0) {
       for (let j = 0; j < 100; ++j) {
@@ -101,13 +93,6 @@ const Home: NextPage = () => {
       const pistr10 = (pi / powBigInt(10n, 20n)).toString(10);
       return pistr10;
     }
-  };
-
-  const garnishPi = (res: string) => `3.${res.slice(1)}`;
-
-  const calElapsed = () => {
-    const elapsed = (timeEnd - timeStart) / 1000;
-    return elapsed.toFixed(3);
   };
 
   return (
@@ -187,7 +172,9 @@ const Home: NextPage = () => {
             ) : (
               result && (
                 <Center>
-                  <Text mt={1}>⏱ Done in {calElapsed()} s ⏱</Text>
+                  <Text mt={1}>
+                    ⏱ Done in {calElapsed(timeStart, timeEnd)} s ⏱
+                  </Text>
                 </Center>
               )
             )}
