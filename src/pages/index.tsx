@@ -26,7 +26,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
-import { countBake, powBigInt, garnishPi, calElapsed } from "@utils";
+import { countStats, powBigInt, garnishPi, calElapsed } from "@utils";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
     if (digits > 0) {
       setIsLoading(true);
       setProgress(0);
-      countBake();
+      countStats(digits);
       setTimeout(() => {
         setTimeStart(Date.now());
         setTimeEnd(Date.now());
