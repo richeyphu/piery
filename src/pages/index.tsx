@@ -47,10 +47,11 @@ const Home: NextPage = () => {
       countBake();
       setTimeout(() => {
         setTimeStart(Date.now());
+        setTimeEnd(Date.now());
         heatOven(digits)
-          .then((res) => {
-            // setResult(res + "");
-          })
+          // .then((res) => {
+          //   setResult(res + "");
+          // })
           .catch((err) => {
             console.error(err);
             // setResult("");
