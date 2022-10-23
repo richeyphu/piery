@@ -181,9 +181,17 @@ const Home: NextPage = () => {
           </Stack>
           <Spacer />
           {isLoading ? (
-            <Center fontSize="9xl" mt={10}>
-              <span className={styles["spin-me"]}>🥧</span>
-            </Center>
+            <>
+              <Center fontSize="9xl" mt={10}>
+                <span className={styles["spin-me"]}>🥧</span>
+              </Center>
+              <Center mt={2} mb={6} flexDir="column" color="CaptionText">
+                <Text>Your browser may be unresponsive during this time.</Text>
+                <Text mt={2} fontSize="sm">
+                  💡Protip: Open web console to view the progress💡
+                </Text>
+              </Center>
+            </>
           ) : (
             result && (
               <>
