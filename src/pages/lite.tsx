@@ -189,7 +189,7 @@ const Home: NextPage = () => {
               <Center fontSize="9xl" mt={10}>
                 <span className={styles["spin-me"]}>🥧</span>
               </Center>
-              <Center mt={2} mb={6} flexDir="column" color="CaptionText">
+              <Center mt={2} mb={6} flexDir="column" textAlign="center">
                 <Text>Your browser may be unresponsive during this time.</Text>
                 <Text mt={2} fontSize="sm">
                   💡Protip: Open web console to view the progress💡
