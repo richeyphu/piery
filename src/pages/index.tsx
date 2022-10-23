@@ -121,7 +121,11 @@ const Home: NextPage = () => {
       // setTimeout(() => setProgress(currentProgress), 10);
       setProgress(currentProgress);
 
-      console.log(currentProgress);
+      console.log(
+        `%: ${currentProgress.toFixed(
+          2
+        )}, Digit: ${currentDigit}, Terms: ${currentTerms}`
+      );
 
       // return bakePi(i, x, pi);
     } else {

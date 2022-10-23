@@ -85,7 +85,11 @@ const Home: NextPage = () => {
       const currentProgress = (parseInt(currentDigit) / digits) * 100;
       // setTimeout(() => setProgress(currentProgress), 10);
 
-      console.log(currentProgress);
+      console.log(
+        `%: ${currentProgress.toFixed(
+          2
+        )}, Digit: ${currentDigit}, Terms: ${currentTerms}`
+      );
 
       return bakePi(i, x, pi);
     } else {
