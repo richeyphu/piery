@@ -168,7 +168,7 @@ const Home: NextPage = () => {
             {isLoading ? (
               <Center mt={10}>
                 <span className={styles["spin-me"]}>⏳</span>
-                <Text ml={2} mr={2}>
+                <Text ml={2} mr={2} className={styles["blink-me"]}>
                   Baking
                 </Text>
                 <span className={styles["spin-me"]}>⏳</span>

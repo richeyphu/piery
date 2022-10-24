@@ -132,11 +132,21 @@
   animation: spin 2s linear infinite;
 }
 
+.blink-me {
+  animation: blink 1.5s linear infinite;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
