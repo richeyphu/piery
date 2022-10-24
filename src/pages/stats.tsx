@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import NextLink from "next/link";
 import {
   Flex,
   Heading,
@@ -9,19 +9,17 @@ import {
   VStack,
   Divider,
   IconButton,
+  Link,
   useColorMode,
 } from "@chakra-ui/react";
 import CountUp from "react-countup";
-import { CloseIcon } from "@chakra-ui/icons";
-import { GithubCorner } from "@components";
+import { GithubCorner, SponsorButton } from "@components";
 import { getCountApiUrl } from "@utils";
 
 const Stats: NextPage = () => {
   const [visits, setVisits] = useState<number>(0);
   const [bakes, setBakes] = useState<number>(0);
   const [totalDigits, setTotalDigits] = useState<number>(0);
-
-  const router = useRouter();
 
   useEffect(() => {
     fetch(getCountApiUrl("get", "visits"))
@@ -95,12 +93,13 @@ const Stats: NextPage = () => {
             />
           </Heading>
           <Divider />
-          <IconButton
-            aria-label="Home"
-            icon={<CloseIcon />}
-            onClick={() => router.push("/")}
-            variant="ghost"
-          />
+          <SponsorButton />
+          <Text fontSize="sm">
+            Back to{" "}
+            <NextLink href="/" passHref>
+              <Link color="yellow.500">Home</Link>
+            </NextLink>
+          </Text>
         </VStack>
       </Flex>
       <GithubCorner />
