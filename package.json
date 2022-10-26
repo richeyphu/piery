@@ -16,6 +16,7 @@
     "framer-motion": "^7.6.1",
     "next": "12.3.1",
     "next-plugin-preact": "^3.0.7",
+    "next-pwa": "^5.6.0",
     "preact": "^10.11.2",
     "preact-render-to-string": "^5.2.5",
     "react": "npm:@preact/compat@17.1.2",
