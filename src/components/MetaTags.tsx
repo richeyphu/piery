@@ -4,7 +4,7 @@ const url: string = "https://piery.vercel.app/";
 const title: string = "🥧 πery | Piery 🥧";
 const description: string = "Fresh baked PI from your browser!";
 const imageUrl: string =
-  "https://raw.githubusercontent.com/richeyphu/piery/main/public/cover.png";
+  "https://raw.githubusercontent.com/richeyphu/piery/main/public/img/cover.png";
 
 const MetaTags = () => {
   return (
