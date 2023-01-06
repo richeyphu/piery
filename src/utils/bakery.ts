@@ -1,4 +1,4 @@
-export { powBigInt } from "powBigInt";
+export { powBigInt } from "powbigint";
 // export function powBigInt(x: bigint, y: bigint): bigint {
 //   let z = 1n;
 //   for (let i = 0n; i < y; i++) {
