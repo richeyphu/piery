@@ -14,6 +14,7 @@ specifiers:
   next: 12.3.1
   next-plugin-preact: ^3.0.7
   next-pwa: ^5.6.0
+  powbigint: ^1.0.4
   preact: ^10.11.2
   preact-render-to-string: ^5.2.5
   react: npm:@preact/compat@17.1.2
@@ -32,6 +33,7 @@ dependencies:
   next: 12.3.1_ive3jjn476xyi3ikfsqwmh5x74
   next-plugin-preact: 3.0.7_ulvpgo4o34tvoygbei72ah5ngq
   next-pwa: 5.6.0_next@12.3.1
+  powbigint: 1.0.4
   preact: 10.11.2
   preact-render-to-string: 5.2.5_preact@10.11.2
   react: /@preact/compat/17.1.2_preact@10.11.2
@@ -4821,6 +4823,10 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: false
+
+  /powbigint/1.0.4:
+    resolution: {integrity: sha512-CAF7N2W+TijpoiuGXKLWM19fHG4qstfNdTgvGs7ULnBDyZw/XJ6+6ByOhG06V9eVjHSKJjCxAsZ6SvLsuGmDQA==}
     dev: false
 
   /preact-render-to-string/5.2.5_preact@10.11.2:

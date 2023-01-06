@@ -1,10 +1,11 @@
-export function powBigInt(x: bigint, y: bigint): bigint {
-  let z = 1n;
-  for (let i = 0n; i < y; i++) {
-    z *= x;
-  }
-  return z;
-}
+export { powBigInt } from "powBigInt";
+// export function powBigInt(x: bigint, y: bigint): bigint {
+//   let z = 1n;
+//   for (let i = 0n; i < y; i++) {
+//     z *= x;
+//   }
+//   return z;
+// }
 
 export const garnishPi = (pi: string): string => `3.${pi.slice(1)}`;
 
