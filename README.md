@@ -23,8 +23,8 @@
 ## Setup
 
 - Clone/fork this repository
-- Install dependencies: `pnpm install` or `npm install`
-- Run the development server: `pnpm dev` or `npm run dev`
+- Install dependencies: `pnpm install`
+- Run the development server: `pnpm dev`
 
 ## Support me
 
