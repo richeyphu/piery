@@ -5,6 +5,7 @@ specifiers:
   '@chakra-ui/react': ^2.3.6
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
+  '@playwright/test': ^1.31.2
   '@types/node': 18.14.6
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -29,6 +30,7 @@ dependencies:
   '@chakra-ui/react': 2.3.6_ridfmwmjxtbibt2czf4dfa4e7e
   '@emotion/react': 11.10.5_ebobgir5cztljesuj62w2gdpcu
   '@emotion/styled': 11.10.5_7algkoh4ymi2tpiq6cfnzrvelm
+  '@playwright/test': 1.31.2
   framer-motion: 7.10.3_ive3jjn476xyi3ikfsqwmh5x74
   next: 12.3.4_ive3jjn476xyi3ikfsqwmh5x74
   next-plugin-preact: 3.0.7_kpn3ww7zeh5uwcwvuu3nxg7ab4
@@ -2691,6 +2693,17 @@ packages:
       tslib: 2.5.0
     dev: true
 
+  /@playwright/test/1.31.2:
+    resolution: {integrity: sha512-BYVutxDI4JeZKV1+ups6dt5WiqKhjBtIYowyZIJ3kBDmJgsuPKsqqKNIMFbUePLSCmp2cZu+BDL427RcNKTRYw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.14.6
+      playwright-core: 1.31.2
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: false
+
   /@popperjs/core/2.11.6:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
@@ -4917,6 +4930,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: false
+
+  /playwright-core/1.31.2:
+    resolution: {integrity: sha512-a1dFgCNQw4vCsG7bnojZjDnPewZcw7tZUNFN0ZkcLYKj+mPmXvg4MpaaKZ5SgqPsOmqIf2YsVRkgqiRDxD+fDQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: false
 
   /postcss/8.4.14:
