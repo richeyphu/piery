@@ -15,7 +15,7 @@ specifiers:
   next: 12.3.4
   next-plugin-preact: ^3.0.7
   next-pwa: ^5.6.0
-  powbigint: ^1.1.0
+  powbigint: ^1.1.1
   preact: ^10.13.0
   preact-render-to-string: ^5.2.6
   react: npm:@preact/compat@17.1.2
@@ -35,7 +35,7 @@ dependencies:
   next: 12.3.4_ive3jjn476xyi3ikfsqwmh5x74
   next-plugin-preact: 3.0.7_kpn3ww7zeh5uwcwvuu3nxg7ab4
   next-pwa: 5.6.0_next@12.3.4
-  powbigint: 1.1.0
+  powbigint: 1.1.1
   preact: 10.13.0
   preact-render-to-string: 5.2.6_preact@10.13.0
   react: /@preact/compat/17.1.2_preact@10.13.0
@@ -4947,8 +4947,8 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
-  /powbigint/1.1.0:
-    resolution: {integrity: sha512-kYHIs5KhXfT4cA9q6GoE5So+n7WpJ05xwJvA3EIFSNmyiX/bgVTHzMFxCgwylThTYVVtOiXG6E0vLCnJ8OCJ+g==}
+  /powbigint/1.1.1:
+    resolution: {integrity: sha512-BQXPLMKLBy5uYudFoFPycWWE7YGv93Q3+nv8cBpEwvymTcWcvvQuzHSZMdvoA0YWcjCmCcO8O69x127kuDZ3NQ==}
     dev: false
 
   /preact-render-to-string/5.2.6_preact@10.13.0:
