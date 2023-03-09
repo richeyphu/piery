@@ -1,6 +1,18 @@
 import { test, expect } from "@playwright/test";
 
-test("should have heading", async ({ page }) => {
-  await page.goto("/");
-  await expect(page.getByRole("heading", { name: "πery" })).toBeVisible();
+test.describe("Page Heading", () => {
+  test("should have `index` heading", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByRole("heading", { name: "π" })).toBeVisible();
+  });
+
+  test("should have `lite` heading", async ({ page }) => {
+    await page.goto("/lite");
+    await expect(page.getByRole("heading", { name: "π" })).toBeVisible();
+  });
+
+  test("should have `stats` heading", async ({ page }) => {
+    await page.goto("/stats");
+    await expect(page.getByRole("heading", { name: "π" })).toBeVisible();
+  });
 });
