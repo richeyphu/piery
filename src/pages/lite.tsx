@@ -199,7 +199,7 @@ const Home: NextPage = () => {
           ) : (
             result && (
               <>
-                <Text mt={8} fontFamily="mono">
+                <Text mt={8} fontFamily="mono" id="result">
                   {garnishPi(result)}
                 </Text>
                 <Center mt={6}>
