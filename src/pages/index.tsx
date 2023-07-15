@@ -146,7 +146,7 @@ const Home: NextPage = () => {
           name="theme-color"
           content={useColorMode().colorMode === "dark" ? "#1a202c" : "#fff"}
         />
-        <script async src="https://api.countapi.xyz/hit/piery-web/visits" />
+        {/* <script async src="https://api.countapi.xyz/hit/piery-web/visits" /> */}
       </Head>
 
       {/* 
