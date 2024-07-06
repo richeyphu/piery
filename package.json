@@ -14,7 +14,7 @@
     "@chakra-ui/react": "2.3.7",
     "@emotion/react": "~11.10.8",
     "@emotion/styled": "~11.10.8",
-    "@playwright/test": "~1.31.2",
+    "@playwright/test": "~1.45.1",
     "framer-motion": "~7.10.3",
     "next": "12.3.4",
     "next-plugin-preact": "^3.0.7",
