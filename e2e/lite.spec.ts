@@ -1,6 +1,5 @@
-import { test, expect } from "@playwright/test";
-
-import { bakePiSteps, getPiByDigits } from "./oven.spec";
+import { test } from "@playwright/test";
+import { bakePiSteps, getPiByDigits } from "./test.utils";
 
 test.describe("PI Oven Lite", () => {
   test.beforeEach(async ({ page }) => {
