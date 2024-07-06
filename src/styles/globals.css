@@ -26,3 +26,7 @@ a {
     background: black;
   }
 }
+
+html > * {
+  transition: color, background-color 0.2s ease-out !important;
+}
