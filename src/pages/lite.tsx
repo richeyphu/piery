@@ -1,31 +1,29 @@
-import { useEffect, useState } from "react";
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import NextLink from "next/link";
-import styles from "../styles/Home.module.css";
 import {
+  Badge,
+  Button,
+  Center,
   Container,
   Flex,
-  Stack,
-  Spacer,
-  Text,
   Heading,
-  Center,
-  Input,
+  Link,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
   NumberInput,
   NumberInputField,
   NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-  Button,
-  Badge,
   Progress,
-  Link,
-  useColorMode,
+  Spacer,
+  Stack,
+  Text,
+  useColorMode
 } from "@chakra-ui/react";
 import { ColorToggle, GithubCorner, ScrollToTop } from "@components";
-import { countStats, powBigInt, garnishPi, calElapsed } from "@utils";
+import { calElapsed, countStats, garnishPi, powBigInt } from "@utils";
+import type { NextPage } from "next";
+import Head from "next/head";
+import NextLink from "next/link";
+import { useState } from "react";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const [digits, setDigits] = useState<number>(0);

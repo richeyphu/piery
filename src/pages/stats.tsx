@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from "react";
+import {
+  Divider,
+  Flex,
+  Heading,
+  Link,
+  Text,
+  useColorMode,
+  VStack
+} from "@chakra-ui/react";
+import { GithubCorner, SponsorButton } from "@components";
+import { getCountApiUrl } from "@utils";
 import type { NextPage } from "next";
 import Head from "next/head";
 import NextLink from "next/link";
-import {
-  Flex,
-  Heading,
-  Text,
-  VStack,
-  Divider,
-  IconButton,
-  Link,
-  useColorMode,
-} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import { GithubCorner, SponsorButton } from "@components";
-import { getCountApiUrl } from "@utils";
 
 const Stats: NextPage = () => {
   const [visits, setVisits] = useState<number>(0);

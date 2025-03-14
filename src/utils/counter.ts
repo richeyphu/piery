@@ -10,7 +10,10 @@ export function countBake(): void {
 
 export function countDigit(amount: number): void {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", getCountApiUrl("update", `sumdigits?amount=${String(amount)}`));
+  xhr.open(
+    "GET",
+    getCountApiUrl("update", `sumdigits?amount=${String(amount)}`)
+  );
   xhr.send();
 }
 
