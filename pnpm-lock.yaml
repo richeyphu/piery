@@ -39,8 +39,8 @@ importers:
         specifier: ^5.6.0
         version: 5.6.0(@babel/core@7.24.7)(next@12.3.4(@babel/core@7.24.7)(@preact/compat@17.1.2(preact@10.13.2))(@preact/compat@17.1.2(preact@10.13.2)))(webpack@5.92.1)
       powbigint:
-        specifier: ^1.1.1
-        version: 1.1.1
+        specifier: ^1.2.0
+        version: 1.2.0
       preact:
         specifier: ~10.13.2
         version: 10.13.2
@@ -2869,8 +2869,9 @@ packages:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
     engines: {node: ^10 || ^12 || >=14}
 
-  powbigint@1.1.1:
-    resolution: {integrity: sha512-BQXPLMKLBy5uYudFoFPycWWE7YGv93Q3+nv8cBpEwvymTcWcvvQuzHSZMdvoA0YWcjCmCcO8O69x127kuDZ3NQ==}
+  powbigint@1.2.0:
+    resolution: {integrity: sha512-R8Qj4JaP0+7Jt02gASKWwlw/S+s4RPccazxewl+BcAN/JeVBbuOVnqzpo2xi1WQou6gOtjFNb6H8IsceXbnR/w==}
+    engines: {node: '>=22', pnpm: '>=10'}
 
   preact-render-to-string@5.2.6:
     resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==}
@@ -6904,7 +6905,7 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
-  powbigint@1.1.1: {}
+  powbigint@1.2.0: {}
 
   preact-render-to-string@5.2.6(preact@10.13.2):
     dependencies:
